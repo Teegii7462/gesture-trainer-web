@@ -159,7 +159,12 @@ export async function putModel(bundle: ModelBundle): Promise<void> {
   const body = JSON.stringify(bundle);
   if (useBlob()) {
     const { put } = await import("@vercel/blob");
-    await put(MODEL_PATH, body, { access: "public", addRandomSuffix: false, contentType: "application/json" });
+    await put(MODEL_PATH, body, {
+      access: "public",
+      addRandomSuffix: false,
+      allowOverwrite: true, // the global model is overwritten on every retrain
+      contentType: "application/json",
+    });
   } else {
     await fs.mkdir(DATA_DIR, { recursive: true });
     await fs.writeFile(LOCAL_MODEL, body, "utf8");
