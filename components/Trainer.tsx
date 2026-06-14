@@ -301,7 +301,7 @@ export default function Trainer() {
 
   return (
     <main className="wrap">
-      <h1>Gesture Trainer — teach the world&rsquo;s beckon / shoo model</h1>
+      <h1>Gesture Trainer</h1>
 
       <div className="stage">
         <video ref={videoRef} className="mirror" playsInline muted />
@@ -334,8 +334,7 @@ export default function Trainer() {
         <p className="status">{status || (modelReady ? "Model loaded — gesture at the camera." : "Record samples, contribute, then train.")}</p>
         <p className="hint">
           <b>Beckon</b> = curl fingers in (&ldquo;come here&rdquo;). <b>Shoo</b> = push open palm out (&ldquo;go away&rdquo;).
-          <b> Nothing</b> = hold still, rest, type, wave hello. Record a few of each, contribute, and train — the model is
-          shared by everyone. Your camera never leaves your device; only the numeric feature windows are uploaded.
+          <b> Nothing</b> = hold still, rest, type, wave hello. Record a few of each, contribute, and train.
         </p>
       </section>
     </main>
